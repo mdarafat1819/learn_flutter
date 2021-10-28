@@ -11,7 +11,9 @@ int main() {
           title: Text("App Bar"),
           centerTitle: true
         ),
-        body: Text("This is body")
+        body: Center(
+          child: Text("Centered Text1"),
+        )
       )
     )
   );
