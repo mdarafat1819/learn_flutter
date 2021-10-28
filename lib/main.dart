@@ -10,7 +10,15 @@ int main() {
           title: Text("App Bar"), centerTitle: true
           ),
         body: Center(
-          child: Text("Centered Text1"),
+          child: Text("Centered Text1",
+           style: TextStyle(
+             backgroundColor: Colors.white,
+             color: Colors.blue,
+             fontSize: 30,
+             fontStyle: FontStyle.italic,
+             fontWeight: FontWeight.bold,
+           )
+          ),
         ),
         floatingActionButton: FloatingActionButton(
           hoverColor: Colors.green,
