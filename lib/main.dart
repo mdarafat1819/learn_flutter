@@ -5,11 +5,17 @@ int main() {
       title: "Flutter App",
       home: Scaffold(
         backgroundColor: Colors.green,
-        appBar: AppBar(title: Text("App Bar"), centerTitle: true),
+        appBar: AppBar(
+          backgroundColor: Colors.blueGrey,
+          title: Text("App Bar"), centerTitle: true
+          ),
         body: Center(
           child: Text("Centered Text1"),
         ),
         floatingActionButton: FloatingActionButton(
+          hoverColor: Colors.green,
+          backgroundColor:Colors.amber,
+
           child: Text("+"),
           onPressed: () {
             print("Hello");
