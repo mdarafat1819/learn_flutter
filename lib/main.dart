@@ -18,14 +18,7 @@ class HomePage extends StatelessWidget {
           title: Text("App Bar"),
           centerTitle: true),
       body: Center(
-        child: Text("Centered Text1",
-            style: TextStyle(
-              backgroundColor: Colors.white,
-              color: Colors.blue,
-              fontSize: 30,
-              fontStyle: FontStyle.italic,
-              fontWeight: FontWeight.bold,
-            )),
+        child: Image.network("https://miro.medium.com/max/2000/1*PCKC8Ufml-wvb9Vjj3aaWw.jpeg", height: 250, width: 250,),
       ),
       floatingActionButton: FloatingActionButton(
         hoverColor: Colors.green,
