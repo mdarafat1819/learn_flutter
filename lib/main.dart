@@ -16,10 +16,22 @@ class HomePage extends StatelessWidget {
           backgroundColor: Colors.blueGrey,
           title: Text("App Bar"),
           centerTitle: true),
-          body: Center(
-        //child: Image.asset("assets/images/flutter.jpeg", height: 250, width: 250),
-          child: Icon(Icons.alarm, size: 100),
-      ),
+          body:Container(
+            height: 300,
+            alignment: Alignment.center,
+            child:  Container(
+            child: Text("This is Container"),
+            alignment: Alignment.center,
+            width: 200,
+            height: 200,
+            padding: EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.red,
+            ),
+          ),
+           
+          ),
       floatingActionButton: FloatingActionButton(
         hoverColor: Colors.green,
         backgroundColor: Colors.amber,
