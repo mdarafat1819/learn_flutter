@@ -14,12 +14,97 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
           title: Text("App Bar"),
           centerTitle: true),
-      body: Row(
-        children: [ 
-          Text("This is Column"),
-          Image.asset("assets/images/flutter.jpeg", width: 200,height: 250,),
-          
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            ListTile(
+              title: Text("Yeasin Arafat"),
+              subtitle: Text("Going to the moon"),
+              leading: Icon(Icons.account_circle, color: Colors.blue),
+              trailing: Icon(Icons.delete, color: Colors.red),
+            ),
+            ListTile(
+              title: Text("Yeasin Arafat"),
+              subtitle: Text("Going to the moon"),
+              leading: Icon(Icons.account_circle, color: Colors.blue),
+              trailing: Icon(Icons.delete, color: Colors.red),
+            ),
+            ListTile(
+              title: Text("Yeasin Arafat"),
+              subtitle: Text("Going to the moon"),
+              leading: Icon(Icons.account_circle, color: Colors.blue),
+              trailing: Icon(Icons.delete, color: Colors.red),
+            ),
+            ListTile(
+              title: Text("Yeasin Arafat"),
+              subtitle: Text("Going to the moon"),
+              leading: Icon(Icons.account_circle, color: Colors.blue),
+              trailing: Icon(Icons.delete, color: Colors.red),
+            ),
+            ListTile(
+              title: Text("Yeasin Arafat"),
+              subtitle: Text("Going to the moon"),
+              leading: Icon(Icons.account_circle, color: Colors.blue),
+              trailing: Icon(Icons.delete, color: Colors.red),
+            ),
+            ListTile(
+              title: Text("Yeasin Arafat"),
+              subtitle: Text("Going to the moon"),
+              leading: Icon(Icons.account_circle, color: Colors.blue),
+              trailing: Icon(Icons.delete, color: Colors.red),
+            ),
+            ListTile(
+              title: Text("Yeasin Arafat"),
+              subtitle: Text("Going to the moon"),
+              leading: Icon(Icons.account_circle, color: Colors.blue),
+              trailing: Icon(Icons.delete, color: Colors.red),
+            ),
+            ListTile(
+              title: Text("Yeasin Arafat"),
+              subtitle: Text("Going to the moon"),
+              leading: Icon(Icons.account_circle, color: Colors.blue),
+              trailing: Icon(Icons.delete, color: Colors.red),
+            ),
+            ListTile(
+              title: Text("Yeasin Arafat"),
+              subtitle: Text("Going to the moon"),
+              leading: Icon(Icons.account_circle, color: Colors.blue),
+              trailing: Icon(Icons.delete, color: Colors.red),
+            ),
+            ListTile(
+              title: Text("Yeasin Arafat"),
+              subtitle: Text("Going to the moon"),
+              leading: Icon(Icons.account_circle, color: Colors.blue),
+              trailing: Icon(Icons.delete, color: Colors.red),
+            ),
+            ListTile(
+              title: Text("Yeasin Arafat"),
+              subtitle: Text("Going to the moon"),
+              leading: Icon(Icons.account_circle, color: Colors.blue),
+              trailing: Icon(Icons.delete, color: Colors.red),
+            ),
+            ListTile(
+              title: Text("Yeasin Arafat"),
+              subtitle: Text("Going to the moon"),
+              leading: Icon(Icons.account_circle, color: Colors.blue),
+              trailing: Icon(Icons.delete, color: Colors.red),
+            ),
+            ListTile(
+              title: Text("Yeasin Arafat"),
+              subtitle: Text("Going to the moon"),
+              leading: Icon(Icons.account_circle, color: Colors.blue),
+              trailing: Icon(Icons.delete, color: Colors.red),
+            ),
+            ListTile(
+              title: Text("Yeasin Arafat"),
+              subtitle: Text("Going to the moon"),
+              leading: Icon(Icons.account_circle, color: Colors.blue),
+              trailing: Icon(Icons.delete, color: Colors.red),
+            ),
+
+          ],
+        )
+
       ),
       
       floatingActionButton: FloatingActionButton(
