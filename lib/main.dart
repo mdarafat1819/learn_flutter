@@ -14,18 +14,14 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
           title: Text("App Bar"),
           centerTitle: true),
-      body: Container(
-          margin: EdgeInsets.all(20),
-          child: TextField(
-            decoration: InputDecoration(
-                labelText: "Name",
-                prefixIcon: Icon(Icons.person),
-                border: OutlineInputBorder(),
-                hintText: "Enter Your Full Name"),
-            onChanged: (value) {
-              print(value);
-            },
-          )),
+      body: Column(
+        children: [ 
+          Text("This is Column"),
+          Image.asset("assets/images/flutter.jpeg", width: 200,height: 250,),
+          
+        ],
+      ),
+      
       floatingActionButton: FloatingActionButton(
         hoverColor: Colors.green,
         backgroundColor: Colors.amber,
