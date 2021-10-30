@@ -11,27 +11,21 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green,
       appBar: AppBar(
-          backgroundColor: Colors.blueGrey,
           title: Text("App Bar"),
           centerTitle: true),
-          body:Container(
-            height: 300,
-            alignment: Alignment.center,
-            child:  Container(
-            child: Text("This is Container"),
-            alignment: Alignment.center,
-            width: 200,
-            height: 200,
-            padding: EdgeInsets.all(20),
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: Colors.red,
-            ),
-          ),
-           
-          ),
+      body: Container(
+          margin: EdgeInsets.all(20),
+          child: TextField(
+            decoration: InputDecoration(
+                labelText: "Name",
+                prefixIcon: Icon(Icons.person),
+                border: OutlineInputBorder(),
+                hintText: "Enter Your Full Name"),
+            onChanged: (value) {
+              print(value);
+            },
+          )),
       floatingActionButton: FloatingActionButton(
         hoverColor: Colors.green,
         backgroundColor: Colors.amber,
