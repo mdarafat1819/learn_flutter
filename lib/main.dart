@@ -1,6 +1,9 @@
 import 'dart:js';
 
 import 'package:flutter/material.dart';
+import 'package:learn_flutter/secondScreen.dart';
+
+import 'secondScreen.dart';
 
 int main() {
   runApp(MaterialApp(title: "Flutter App", home: HomePage()));
@@ -36,26 +39,29 @@ class _ContactState extends State<Contact> {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(20),
-      child: Column(
-        children:[ 
-          TextField(
-            maxLength: 30,
+      child: Column(children: [
+        TextField(
+          maxLength: 30,
           decoration: InputDecoration(
-              labelText: "Name",
-              border: OutlineInputBorder(),
-              hintText: "Enter Your Full Name",
-              prefixIcon: Icon(Icons.account_circle),
-              ),
-            
+            labelText: "Name",
+            border: OutlineInputBorder(),
+            hintText: "Enter Your Full Name",
+            prefixIcon: Icon(Icons.account_circle),
+          ),
           onChanged: (value) {
             setState(() {
               str = value;
             });
           },
         ),
-        Text("Hello $str")
-        ]
-      ),
+        Text("Hello $str"),
+        ElevatedButton(
+          child: Text("Got to Second Page"),
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => SecondPage()));
+          },
+        )
+      ]),
     );
   }
 }
