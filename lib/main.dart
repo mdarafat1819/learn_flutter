@@ -15,6 +15,24 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("App Bar"), centerTitle: true),
+      drawer: Drawer(
+        child: Column(
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: Text("Yeasin Arafat"), 
+              accountEmail: Text("mdarafat1819@gmail.com"),
+              ),
+            ListTile(
+              title: Text("Second Page"),
+              leading: Icon(Icons.home),
+              onTap:(){
+                Navigator.pop(context);
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>SecondPage()));
+              },
+            )
+          ]
+          )
+      ),
       body: Contact(),
       floatingActionButton: FloatingActionButton(
         hoverColor: Colors.green,
@@ -40,6 +58,7 @@ class _ContactState extends State<Contact> {
     return Container(
       padding: EdgeInsets.all(20),
       child: Column(children: [
+       
         TextField(
           maxLength: 30,
           decoration: InputDecoration(
@@ -58,7 +77,8 @@ class _ContactState extends State<Contact> {
         ElevatedButton(
           child: Text("Got to Second Page"),
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => SecondPage()));
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => SecondPage()));
           },
         )
       ]),
