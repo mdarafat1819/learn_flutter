@@ -63,6 +63,7 @@ class Contact extends StatefulWidget {
 }
 
 class _ContactState extends State<Contact> {
+  TextEditingController userInput = TextEditingController();
   var str = "Guest";
   Widget build(BuildContext context) {
     return Container(
@@ -88,6 +89,23 @@ class _ContactState extends State<Contact> {
           onPressed: () {
             Navigator.push(
                 context, MaterialPageRoute(builder: (context) => SecondPage()));
+          },
+        ),
+        Text(userInput.text),
+        TextField(
+          controller: userInput,
+          decoration: InputDecoration(
+            labelText: "User Input",
+            border: OutlineInputBorder(),
+          ),
+        ),
+       
+        ElevatedButton(
+          child: Text("print user input"),
+          onPressed: (){
+            setState(() {
+              
+            });
           },
         )
       ]),
