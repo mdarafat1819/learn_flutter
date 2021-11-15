@@ -83,20 +83,11 @@ class _ContactState extends State<Contact> {
             child: Text("Submit"),
             onPressed: () {
               if (_formkey.currentState!.validate() == true) {
-                showDialog(
-                    context: context,
-                    builder: (context) => AlertDialog(
-                          title: Text("Thank You"),
-                          content: Text("Successfully Submitted"),
-                          actions: [
-                            ElevatedButton(
-                                onPressed: () {
-                                  Navigator.pop(context);
-                                },
-                                child: Text("Okay"),
-                                )
-                          ],
-                        ));
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text("Succesfully Submitted"),
+                  duration: Duration(seconds: 1),
+                  ),
+                );
               }
             },
           )
