@@ -26,6 +26,8 @@ class Contact extends StatefulWidget {
 class _ContactState extends State<Contact> {
   TextEditingController userName = TextEditingController();
   TextEditingController password = TextEditingController();
+  TextEditingController mobile = TextEditingController();
+
   final _formkey = GlobalKey<FormState>();
   Widget build(BuildContext context) {
     return Container(
@@ -43,8 +45,8 @@ class _ContactState extends State<Contact> {
             decoration: InputDecoration(
               hintText: "Enter Your User Name",
               labelText: "User Name",
-              border: OutlineInputBorder(),
-             ),
+              icon: Icon(Icons.person),
+            ),
           ),
           TextFormField(
             validator: (value) {
@@ -57,8 +59,25 @@ class _ContactState extends State<Contact> {
             decoration: InputDecoration(
               labelText: "Password",
               hintText: "Enter Your Password",
-              border: OutlineInputBorder(),
+              icon: Icon(Icons.person),
             ),
+            obscureText: true,
+          ),
+          TextFormField(
+            validator: (value) {
+              if (value!.length < 11) return "Fil up required";
+              return null;
+            },
+            controller: mobile,
+            decoration: InputDecoration(
+              labelText: "Mobile",
+              hintText: "Enter Your Mobile Number",
+              icon: Icon(Icons.phone),
+            ),
+            keyboardType: TextInputType.number,
+          ),
+          SizedBox(
+            height: 10,
           ),
           ElevatedButton(
             child: Text("Submit"),
