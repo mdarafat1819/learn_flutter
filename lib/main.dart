@@ -20,44 +20,30 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("App Bar"),
       ),
-      body: Column(
+      body: Row(
         children: [
-          AspectRatio(
-            aspectRatio: 15/2,
-            child: Container(
-              alignment: Alignment.center,
-              color: Colors.red,
-              child: Text("Example of AspectRatio Widget"),
-            ),
-            ),
-            AspectRatio(
-            aspectRatio: 15/4,
-            child: Container(
-            alignment: Alignment.center,
-            color: Colors.greenAccent,
-            child: Text("Example of AspectRatio Widget"),
-            ),
-            ),
-            FittedBox(
-              child: Row(
-                children: [
-                  Image.asset('assets/images/flutter.jpeg'),
-                  Container(
-                    padding: EdgeInsets.only(right: 39, left: 30),
-                    child: Text("This is Test", style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),)
-                    ),
-                  Container(
-                    padding: EdgeInsets.only(right: 39, left: 30),
-                    child: Text("This is Test", style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),)
-                    ),
-                  Container(
-                    padding: EdgeInsets.only(right: 39, left: 30),
-                    child: Text("This is Test", style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),)
-                    ),
-                ],
-              ),
-              fit:BoxFit.cover,
-            ),
+          Container(
+            child: Stack(
+              children: [
+                Container(
+                  height: 100,
+                  width: 50,
+                  color: Colors.green,
+                ),
+              Container(
+                  height: 80,
+                  width: 50,
+                  color: Colors.red,
+                ),
+              Container(
+                  height: 40,
+                  width: 50,
+                  color: Colors.grey,
+                ),
+              
+              ],
+             ),
+          ),
         ],
         ),
     );
