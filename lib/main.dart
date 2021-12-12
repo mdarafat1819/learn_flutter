@@ -1,98 +1,65 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 
 int main() {
-  runApp(MaterialApp(title: "Flutter App", home: HomePage()));
+  runApp(MyApp());
   return 0;
 }
 
-class HomePage extends StatelessWidget {
-  @override
+class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("App Bar"), centerTitle: true),
-      body: Contact(),
+    return MaterialApp(
+      title: "App Bar",
+      home: HomePage(),
     );
   }
 }
 
-class Contact extends StatefulWidget {
-  State<StatefulWidget> createState() {
-    return _ContactState();
-  }
-}
-
-class _ContactState extends State<Contact> {
-  TextEditingController userName = TextEditingController();
-  TextEditingController password = TextEditingController();
-  TextEditingController mobile = TextEditingController();
-
-  final _formkey = GlobalKey<FormState>();
+class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(20),
-      child: Form(
-        key: _formkey,
-        child: Column(children: [
-          TextFormField(
-            validator: (value) {
-              if (value!.isEmpty) {
-                return "Fil up required";
-              }
-              return null;
-            },
-            decoration: InputDecoration(
-              hintText: "Enter Your User Name",
-              labelText: "User Name",
-              icon: Icon(Icons.person),
-            ),
-          ),
-          TextFormField(
-            validator: (value) {
-              if (value!.length < 4) {
-                return "Minimum 4 digit is required";
-              }
-              return null;
-            },
-            controller: userName,
-            decoration: InputDecoration(
-              labelText: "Password",
-              hintText: "Enter Your Password",
-              icon: Icon(Icons.person),
-            ),
-            obscureText: true,
-          ),
-          TextFormField(
-            validator: (value) {
-              if (value!.length < 11) return "Fil up required";
-              return null;
-            },
-            controller: mobile,
-            decoration: InputDecoration(
-              labelText: "Mobile",
-              hintText: "Enter Your Mobile Number",
-              icon: Icon(Icons.phone),
-            ),
-            keyboardType: TextInputType.number,
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          ElevatedButton(
-            child: Text("Submit"),
-            onPressed: () {
-              if (_formkey.currentState!.validate() == true) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text("Succesfully Submitted"),
-                  duration: Duration(seconds: 1),
-                  ),
-                );
-              }
-            },
-          )
-        ]),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("App Bar"),
       ),
+      body: Column(
+        children: [
+          AspectRatio(
+            aspectRatio: 15/2,
+            child: Container(
+              alignment: Alignment.center,
+              color: Colors.red,
+              child: Text("Example of AspectRatio Widget"),
+            ),
+            ),
+            AspectRatio(
+            aspectRatio: 15/4,
+            child: Container(
+            alignment: Alignment.center,
+            color: Colors.greenAccent,
+            child: Text("Example of AspectRatio Widget"),
+            ),
+            ),
+            FittedBox(
+              child: Row(
+                children: [
+                  Image.asset('assets/images/flutter.jpeg'),
+                  Container(
+                    padding: EdgeInsets.only(right: 39, left: 30),
+                    child: Text("This is Test", style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),)
+                    ),
+                  Container(
+                    padding: EdgeInsets.only(right: 39, left: 30),
+                    child: Text("This is Test", style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),)
+                    ),
+                  Container(
+                    padding: EdgeInsets.only(right: 39, left: 30),
+                    child: Text("This is Test", style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),)
+                    ),
+                ],
+              ),
+              fit:BoxFit.cover,
+            ),
+        ],
+        ),
     );
   }
 }
