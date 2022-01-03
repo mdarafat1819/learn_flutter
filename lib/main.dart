@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 int main() {
   runApp(MyApp());
@@ -15,19 +18,11 @@ class MyApp extends StatelessWidget {
 }
 
 class HomePage extends StatelessWidget {
-  Future<void> getData() async {
-    final userId = await Future.delayed(Duration(seconds: 3), () {
-      print("User ID1: 1");
-      return 2;
-    });
-
-    Future.delayed(Duration(seconds: 2), () {
-      print("User ID2: " + userId.toString());
-    });
-
-    print("Random Line");
-
-    return;
+  Future getData() async {
+    final url = Uri.parse('https://fakestoreapi.com/products');
+    final response = await http.get(url);
+    print(response.statusCode);
+    return jsonDecode(response.body);
   }
 
   Widget build(BuildContext context) {
@@ -36,17 +31,25 @@ class HomePage extends StatelessWidget {
         title: Text("Learn Flutter"),
         centerTitle: true,
       ),
-      body: Center(
-        child: Container(
-          child: ElevatedButton(
-            child: Text("Click Me"),
-            onPressed: () async {
-              await getData();
-              print("Second Function");
-            },
-          ),
-        ),
-      ),
+      body: FutureBuilder(
+          future: getData(),
+          builder: (context, AsyncSnapshot snapshot) {
+            if (snapshot.hasData) {
+              return Center(
+                child: ListView.builder(
+                    itemCount: snapshot.data.length,
+                    itemBuilder: (context, index) {
+                      return ListTile(
+                        title: Text(snapshot.data[index]['title'], style: TextStyle(fontSize: 25),),
+                        subtitle: Text(snapshot.data[index]['description'], style: TextStyle(fontSize: 15),),
+                      );
+                    }),
+              );
+            }
+            return Center(
+              child: CircularProgressIndicator(),
+            );
+          }),
     );
   }
 }
