@@ -41,7 +41,8 @@ class HomePage extends StatelessWidget {
                     itemBuilder: (context, index) {
                       return ListTile(
                         title: Text(snapshot.data[index]['title'], style: TextStyle(fontSize: 25),),
-                        subtitle: Text(snapshot.data[index]['description'], style: TextStyle(fontSize: 15),),
+                        leading: Image.network(snapshot.data[index]['image']),
+                        subtitle: Text("Price: "+snapshot.data[index]['price'].toString(), style: TextStyle(fontSize: 15),),
                       );
                     }),
               );
