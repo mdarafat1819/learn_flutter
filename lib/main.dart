@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:google_maps/google_maps.dart';
+import 'package:learn_flutter/google_sheets_api.dart';
 
-import './geo_location.dart';
+
 int main() {
   runApp(MyApp());
   return 0;
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
           title: Text("Learn Flutter"),
           centerTitle: true,
         ),
-        body: Location(),
+        body: GoogleSheetsApi(),
       ),
     );
   }
