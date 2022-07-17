@@ -3,9 +3,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Authentication {
+  FirebaseAuth auth = FirebaseAuth.instance;
   Future addNewUser(String user_email, String pass) async {
     try {
-      FirebaseAuth auth = FirebaseAuth.instance;
+
       UserCredential userCredential = await auth.createUserWithEmailAndPassword(
           email: user_email,
           password: pass
@@ -18,7 +19,6 @@ class Authentication {
 
   Future loginUser(String email, String pass) async{
     try {
-      FirebaseAuth auth = FirebaseAuth.instance;
       UserCredential user = await auth.signInWithEmailAndPassword(email: email, password: pass);
       print(user);
       return user.user;
