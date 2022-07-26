@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:learn_flutter/firebaseAuth.dart';
+import 'package:learn_flutter/image_upload.dart';
 
 class HomePage extends StatelessWidget {
   FirebaseFirestore firestore = FirebaseFirestore.instance;
@@ -32,17 +33,17 @@ class HomePage extends StatelessWidget {
 
     DocumentReference users = firestore.collection('users').doc('20-22');
     try{
-      users.set({
+      users.update({
         'CHEM' : [{
-          'id' : '18ICTCSE001',
+          'id' : '18ICTCSE003',
           'name' : 'Yeasin Arafat',
         },
           {
-            'id' : '18ICTCSE002',
-            'name' : 'Anik Das'
+            'id' : '18ICTCSE004',
+            'name' : 'Roksana Akter'
           }
         ],
-      }
+      },
 
       );
     } catch(e) {
@@ -87,6 +88,12 @@ class HomePage extends StatelessWidget {
                 child: Text("Add Data"),
                 onPressed: () async {
                   await addData();
+                },
+              ),
+              ElevatedButton(
+                child: Text("Image Uploads"),
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => ImageUpload()));
                 },
               )
             ],
